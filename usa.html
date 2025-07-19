@@ -5,11 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>USA - Washington DC & New York | Hari’s Hobby Hub</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        .intro {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+            text-align: center;
+            color: #5C4B51;
+        }
+        .intro h2 {
+            color: #A05793;
+            margin-bottom: 10px;
+        }
+        .city-section {
+            margin: 50px auto;
+            max-width: 1000px;
+            padding: 0 20px;
+        }
+        .city-section h3 {
+            color: #A05793;
+            margin-bottom: 15px;
+        }
+        .slideshow-container {
+            position: relative;
+            margin: auto;
+        }
+        .slides {
+            display: none;
+        }
+        .slides img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.3s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.6);
+        }
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 4px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Washington DC & New York</h1>
-        <p>From historic monuments to bustling city life in the USA.</p>
+        <h1>USA - Washington DC & New York</h1>
+        <p>Two unforgettable trips to iconic American cities.</p>
     </header>
 
     <nav>
@@ -20,18 +92,121 @@
     </nav>
 
     <main>
-        <h2>Highlights</h2>
-        <ul>
-            <li>Lincoln Memorial & White House (DC)</li>
-            <li>Central Park & Times Square (NYC)</li>
-            <li>Smithsonian Museums</li>
-        </ul>
-        <img src="images/usa_dc.jpg" alt="Washington Monument with reflection" />
-        <p><a href="travel.html">← Back to Travel</a></p>
+        <!-- Washington DC Section -->
+        <section class="city-section">
+            <h3>Washington DC (Spring 2024)</h3>
+            <p>Last spring, I visited Washington DC and explored its historic monuments, beautiful cherry blossoms, and world-class museums. It was a peaceful yet inspiring experience.</p>
+
+            <div class="slideshow-container">
+                <!-- 6 slides for Washington DC -->
+                <div class="slides fade dc">
+                    <img src="images/dc1.jpg" alt="Washington DC photo 1">
+                </div>
+                <div class="slides fade dc">
+                    <img src="images/dc2.jpg" alt="Washington DC photo 2">
+                </div>
+                <div class="slides fade dc">
+                    <img src="images/dc3.jpg" alt="Washington DC photo 3">
+                </div>
+                <div class="slides fade dc">
+                    <img src="images/dc4.jpg" alt="Washington DC photo 4">
+                </div>
+                <div class="slides fade dc">
+                    <img src="images/dc5.jpg" alt="Washington DC photo 5">
+                </div>
+                <div class="slides fade dc">
+                    <img src="images/dc6.jpg" alt="Washington DC photo 6">
+                </div>
+
+                <!-- Buttons -->
+                <a class="prev" onclick="plusSlides(-1, 'dc')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'dc')">&#10095;</a>
+            </div>
+
+            <div class="dots">
+                <span class="dot dc-dot" onclick="currentSlide(1, 'dc')"></span>
+                <span class="dot dc-dot" onclick="currentSlide(2, 'dc')"></span>
+                <span class="dot dc-dot" onclick="currentSlide(3, 'dc')"></span>
+                <span class="dot dc-dot" onclick="currentSlide(4, 'dc')"></span>
+                <span class="dot dc-dot" onclick="currentSlide(5, 'dc')"></span>
+                <span class="dot dc-dot" onclick="currentSlide(6, 'dc')"></span>
+            </div>
+        </section>
+
+        <!-- New York Section -->
+        <section class="city-section">
+            <h3>New York (Spring 2025)</h3>
+            <p>This year, I traveled to New York City and immersed myself in its vibrant energy, iconic landmarks, and diverse food culture. From Central Park to the bustling Times Square, every moment was unforgettable.</p>
+
+            <div class="slideshow-container">
+                <!-- 6 slides for New York -->
+                <div class="slides fade nyc">
+                    <img src="images/nyc1.jpg" alt="New York photo 1">
+                </div>
+                <div class="slides fade nyc">
+                    <img src="images/nyc2.jpg" alt="New York photo 2">
+                </div>
+                <div class="slides fade nyc">
+                    <img src="images/nyc3.jpg" alt="New York photo 3">
+                </div>
+                <div class="slides fade nyc">
+                    <img src="images/nyc4.jpg" alt="New York photo 4">
+                </div>
+                <div class="slides fade nyc">
+                    <img src="images/nyc5.jpg" alt="New York photo 5">
+                </div>
+                <div class="slides fade nyc">
+                    <img src="images/nyc6.jpg" alt="New York photo 6">
+                </div>
+
+                <!-- Buttons -->
+                <a class="prev" onclick="plusSlides(-1, 'nyc')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'nyc')">&#10095;</a>
+            </div>
+
+            <div class="dots">
+                <span class="dot nyc-dot" onclick="currentSlide(1, 'nyc')"></span>
+                <span class="dot nyc-dot" onclick="currentSlide(2, 'nyc')"></span>
+                <span class="dot nyc-dot" onclick="currentSlide(3, 'nyc')"></span>
+                <span class="dot nyc-dot" onclick="currentSlide(4, 'nyc')"></span>
+                <span class="dot nyc-dot" onclick="currentSlide(5, 'nyc')"></span>
+                <span class="dot nyc-dot" onclick="currentSlide(6, 'nyc')"></span>
+            </div>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2025 Hari Kang. All rights reserved.</p>
     </footer>
+
+    <script>
+        let slideIndices = { dc: 1, nyc: 1 };
+        showSlides(1, 'dc');
+        showSlides(1, 'nyc');
+
+        function plusSlides(n, city) {
+            showSlides(slideIndices[city] += n, city);
+        }
+
+        function currentSlide(n, city) {
+            showSlides(slideIndices[city] = n, city);
+        }
+
+        function showSlides(n, city) {
+            let i;
+            let slides = document.getElementsByClassName(city);
+            let dots = document.getElementsByClassName(city + '-dot');
+            if (n > slides.length) {slideIndices[city] = 1}
+            if (n < 1) {slideIndices[city] = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndices[city] - 1].style.display = "block";
+            dots[slideIndices[city] - 1].className += " active";
+        }
+    </script>
 </body>
 </html>
