@@ -5,6 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel | Hari’s Hobby Hub</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #4F9BCF;
+            display: flex;
+            justify-content: center;
+        }
+        .tab button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+            color: white;
+        }
+        .tab button:hover {
+            background-color: #2A86C9;
+        }
+        .tab button.active {
+            background-color: #2A86C9;
+            font-weight: bold;
+        }
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+            background-color: #A0C4E0;
+        }
+        .tabcontent img {
+            max-width: 600px;
+            width: 100%;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -21,16 +60,55 @@
 
     <main>
         <h2>Explore by Region</h2>
-        <ul>
-            <li><a href="asia.html">Asia</a></li>
-            <li><a href="europe.html">Europe</a></li>
-            <li><a href="usa.html">USA</a></li>
-        </ul>
-        <img src="images/travel_worldmap.jpg" alt="World map showing travel destinations" />
+
+        <div class="tab">
+            <button class="tablinks" onclick="openRegion(event, 'Asia')" id="defaultOpen">Asia</button>
+            <button class="tablinks" onclick="openRegion(event, 'Europe')">Europe</button>
+            <button class="tablinks" onclick="openRegion(event, 'USA')">USA</button>
+        </div>
+
+        <div id="Asia" class="tabcontent">
+            <h3>Jeju Island, Korea</h3>
+            <p>Jeju Island is a beautiful volcanic island in South Korea, famous for its beaches, Hallasan mountain, and scenic coastal roads.</p>
+            <img src="images/asia_jeju.jpg" alt="Coastline view in Jeju Island" />
+            <p><a href="asia.html">See full Asia travel page →</a></p>
+        </div>
+
+        <div id="Europe" class="tabcontent">
+            <h3>Germany</h3>
+            <p>Explore Germany’s rich history, modern cities like Berlin, and fairytale castles along the Rhine river.</p>
+            <img src="images/europe_germany.jpg" alt="Neuschwanstein Castle in Germany" />
+            <p><a href="europe.html">See full Europe travel page →</a></p>
+        </div>
+
+        <div id="USA" class="tabcontent">
+            <h3>Washington DC & New York</h3>
+            <p>From the iconic monuments in Washington DC to the bustling streets of New York City, these destinations offer unforgettable experiences.</p>
+            <img src="images/usa_dc_nyc.jpg" alt="Washington Monument and NYC skyline" />
+            <p><a href="usa.html">See full USA travel page →</a></p>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2025 Hari Kang. All rights reserved.</p>
     </footer>
+
+    <script>
+        function openRegion(evt, regionName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(regionName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        document.getElementById("defaultOpen").click();
+    </script>
 </body>
 </html>
+
