@@ -5,11 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movies | Hari’s Hobby Hub</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        .movie-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px auto;
+            max-width: 1000px;
+            padding: 0 20px;
+        }
+        .movie-card {
+            background-color: #FFFFFF;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .movie-card:hover {
+            transform: scale(1.03);
+        }
+        .movie-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .movie-card h3 {
+            margin: 15px;
+            color: #A05793;
+        }
+        .movie-card p {
+            margin: 0 15px 15px;
+            font-size: 0.95em;
+            color: #5C4B51;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Movies</h1>
-        <p>Reviews and ratings of movies I’ve watched recently.</p>
+        <p>Explore my thoughts and reviews on some of my favorite films!</p>
     </header>
 
     <nav>
@@ -20,14 +54,26 @@
     </nav>
 
     <main>
-        <h2>Latest Movie Reviews</h2>
-        <p>Check out my thoughts on these films:</p>
-        <ol>
-            <li><strong>Everything Everywhere All At Once</strong> - 5/5 stars</li>
-            <li><strong>Oppenheimer</strong> - 4.5/5 stars</li>
-            <li><strong>The Grand Budapest Hotel</strong> - 5/5 stars</li>
-        </ol>
-        <img src="images/movies_theater.jpg" alt="Movie theater interior" />
+        <section class="movie-gallery">
+            <!-- King of Kings -->
+            <div class="movie-card">
+                <img src="images/kingofkings.jpg" alt="King of Kings">
+                <h3>King of Kings</h3>
+                <p>A beautifully cinematic portrayal of the life of Jesus. The film’s epic storytelling and powerful score left a deep impression on me.</p>
+            </div>
+            <!-- 야당 -->
+            <div class="movie-card">
+                <img src="images/야당.jpg" alt="Yadang">
+                <h3>Yadang</h3>
+                <p>A thought-provoking Korean drama that explores complex human emotions and relationships with subtle elegance and depth.</p>
+            </div>
+            <!-- 하이파이브 -->
+            <div class="movie-card">
+                <img src="images/하이파이브.jpg" alt="Hi-Five">
+                <h3>Hi-Five</h3>
+                <p>A fun and heartwarming story about friendship and teamwork. It’s lighthearted yet full of inspiring moments.</p>
+            </div>
+        </section>
     </main>
 
     <footer>
