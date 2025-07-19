@@ -5,11 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cooking | Hari’s Hobby Hub</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        .recipe-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px auto;
+            max-width: 1000px;
+            padding: 0 20px;
+        }
+        .recipe-card {
+            background-color: #FFFFFF;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .recipe-card:hover {
+            transform: scale(1.03);
+        }
+        .recipe-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .recipe-card h3 {
+            margin: 15px;
+            color: #A05793;
+        }
+        .recipe-card p {
+            margin: 0 15px 15px;
+            font-size: 0.95em;
+            color: #5C4B51;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Cooking</h1>
-        <p>My favorite recipes and cooking adventures.</p>
+        <p>Discover my favorite recipes and cooking creations!</p>
     </header>
 
     <nav>
@@ -20,14 +54,26 @@
     </nav>
 
     <main>
-        <h2>Recipes I Love</h2>
-        <p>Discover recipes for pasta, desserts, and more!</p>
-        <ul>
-            <li>Homemade Pasta</li>
-            <li>Chocolate Cake</li>
-            <li>Kimchi Fried Rice</li>
-        </ul>
-        <img src="images/cooking_pasta.jpg" alt="Homemade pasta dish" />
+        <section class="recipe-gallery">
+            <!-- 부대찌개 -->
+            <div class="recipe-card">
+                <img src="images/budae_jjigae.jpg" alt="Budae Jjigae (Army Stew)">
+                <h3>Budae Jjigae (Army Stew)</h3>
+                <p>A rich, spicy Korean stew with sausage, ham, and hearty vegetables. Perfect for cold days!</p>
+            </div>
+            <!-- 치즈감자볼 -->
+            <div class="recipe-card">
+                <img src="images/cheese_potato_ball.jpg" alt="Cheese Potato Balls">
+                <h3>Cheese Potato Balls</h3>
+                <p>Crispy on the outside, soft and cheesy on the inside. A perfect snack or appetizer!</p>
+            </div>
+            <!-- 로제떡볶이 -->
+            <div class="recipe-card">
+                <img src="images/rose_tteokbokki.jpg" alt="Rose Tteokbokki">
+                <h3>Rose Tteokbokki</h3>
+                <p>Korean rice cakes in a creamy, spicy rose sauce. A delicious twist on a classic dish.</p>
+            </div>
+        </section>
     </main>
 
     <footer>
