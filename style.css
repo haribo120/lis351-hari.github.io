@@ -53,3 +53,43 @@ img {
     height: auto;
     border-radius: 8px;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #A0C4E0;
+    margin: 0;
+    padding: 20px;
+    color: #124B7C;
+}
+
+header {
+    background-color: #2A86C9;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+nav {
+    background-color: #4F9BCF;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main img {
+    max-width: 600px;
+    width: 100%;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
