@@ -1,0 +1,55 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #A0C4E0; /* Powder blue background */
+    margin: 0;
+    padding: 20px;
+    color: #124B7C; /* Indigo for text */
+}
+
+header, footer {
+    text-align: center;
+    padding: 10px;
+}
+
+header {
+    background-color: #2A86C9; /* Steel blue */
+    color: white;
+}
+
+nav {
+    background-color: #4F9BCF; /* Celestial Blue */
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main h2 {
+    color: #1A5F96; /* Lapis Lazuli */
+}
+
+img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+}
