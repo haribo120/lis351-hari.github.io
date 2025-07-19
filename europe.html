@@ -5,11 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Europe - Germany | Hari’s Hobby Hub</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        .intro {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+            text-align: center;
+            color: #5C4B51;
+        }
+        .intro h2 {
+            color: #A05793;
+            margin-bottom: 10px;
+        }
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+        }
+        .slides {
+            display: none;
+        }
+        .slides img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.3s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.6);
+        }
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 4px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Germany</h1>
-        <p>Memorable journeys through Germany’s historical landmarks and natural beauty.</p>
+        <h1>Europe - Germany</h1>
+        <p>Exploring Germany and attending REHACARE 2024.</p>
     </header>
 
     <nav>
@@ -20,18 +84,74 @@
     </nav>
 
     <main>
-        <h2>Highlights of Germany</h2>
-        <ul>
-            <li>Berlin’s Brandenburg Gate</li>
-            <li>Romantic Road & Bavarian Castles</li>
-            <li>Oktoberfest in Munich</li>
-        </ul>
-        <img src="images/germany_castle.jpg" alt="Neuschwanstein Castle in Germany" />
-        <p><a href="travel.html">← Back to Travel</a></p>
+        <section class="intro">
+            <h2>About My Trip</h2>
+            <p>In 2024, I had the incredible opportunity to visit Germany and attend the REHACARE exhibition in Düsseldorf. It was inspiring to see cutting-edge innovations in accessibility and mobility solutions. Beyond the exhibition, I explored beautiful German cities, enjoyed local cuisine, and experienced the country’s rich culture and history.</p>
+        </section>
+
+        <section class="slideshow-container">
+            <div class="slides fade">
+                <img src="images/germany1.jpg" alt="Germany photo 1">
+            </div>
+            <div class="slides fade">
+                <img src="images/germany2.jpg" alt="Germany photo 2">
+            </div>
+            <div class="slides fade">
+                <img src="images/germany3.jpg" alt="Germany photo 3">
+            </div>
+            <div class="slides fade">
+                <img src="images/germany4.jpg" alt="Germany photo 4">
+            </div>
+            <div class="slides fade">
+                <img src="images/germany5.jpg" alt="Germany photo 5">
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </section>
+
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2025 Hari Kang. All rights reserved.</p>
     </footer>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
 </body>
 </html>
+
